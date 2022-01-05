@@ -1,0 +1,1 @@
+This is the main repository for all the source code included in the book _React Quickly, Second Edition_, published by [Manning Publications](//manning.com).
