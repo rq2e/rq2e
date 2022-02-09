@@ -3,18 +3,17 @@ import ReactDOM from 'react-dom';
 
 class Link extends React.Component {
   render() {
-    return React.createElement(
-      'p',
-      null,
-      React.createElement(
-        'a',
-        {href: '//reactjs.org'},
-        `Read more about ${this.props.framework}`,
-      ),
+    const link = React.createElement(        
+      'a',
+      { href: this.props.url },  
+      `Read more about ${this.props.framework}`,
     );
+    if (this.props.framework === 'React') {
+      return React.createElement('h1', null, link);
+    }
+    return React.createElement('p', null, link);
   }
 }
-
 
 const link1 = React.createElement(
   Link,

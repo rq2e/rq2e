@@ -1,11 +1,11 @@
 {
-  "name": "rq02-custom-links",
-  "version": "0.1.2",
+  "name": "rq03-children",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3"
+    "react-scripts": "5.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
