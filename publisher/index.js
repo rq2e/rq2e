@@ -39,7 +39,7 @@ const filesToCopy = [
   { source: '/src', destination: ['/src', '/template/src'] },
   { source: '/README.md', destination: ['/README.md'] },
   { source: '/yarn.lock', destination: ['/yarn.lock'] },
-  { source: '/package-lock.json', destination: ['/package-lock.lock'] },
+  { source: '/package-lock.json', destination: ['/package-lock.json'] },
   { source: '/.gitignore', destination: ['/.gitignore', '/template/gitignore'] }, // Not a typo - no dot required
   { source: '/.*', destination: ['/<basename>'] },
   { source: '/package.json', converter: generatePackage, destination: ['/package.json'] },
