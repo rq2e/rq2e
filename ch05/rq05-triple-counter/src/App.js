@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-function Counter() {
-  const [counter, setCounter] = useState(0);
+function Counter({ start }) {
+  const [counter, setCounter] = useState(start);
   return (
     <main>
       <p>Counter: {counter}</p>
@@ -10,17 +10,18 @@ function Counter() {
       >
         Increment
       </button>
-      <button
-        onClick={() => setCounter(0)}
-      >
-        Reset
-      </button>
     </main>
   );
 }
 
 function App() {
-  return <Counter />;
+  return (
+    <>
+      <Counter start={0} />
+      <Counter start={123} />
+      <Counter start={-64} />
+    </>
+  );
 }
 
 export default App;

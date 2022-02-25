@@ -1,9 +1,11 @@
 import { useState } from 'react';
+
 const OPERATORS = {
   ADDITION: (a, b) => a + b,
   SUBTRACTION: (a, b) => a - b,
   PRODUCT: (a, b) => a * b,
 };
+
 function Calculator({a, b}) {
   const [operator, setOperator] =
     useState(() => OPERATORS.ADDITION);
@@ -32,7 +34,9 @@ function Calculator({a, b}) {
     </main>
   )
 }
+
 function App() {
   return <Calculator a={7} b={4}  />;
 }
+
 export default App;
