@@ -1,0 +1,43 @@
+html, body {
+  margin: 0;
+  font-family: Verdana;
+}
+
+main, header, footer {
+  padding: 8px;
+}
+
+header {
+  border-bottom: 1px solid darkgray;
+  background: #eee;
+}
+
+footer {
+  border-top: 1px solid darkgray;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu {
+  display: flex;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  justify-content:  flex-end;
+}
+
+.menu-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 16px;
+  border: 1px solid lightgray;
+  border-radius: 8px
+}
+
+.menu-link:hover {
+  background: lightgray;
+}
