@@ -48,7 +48,21 @@ const filesToCopy = [
 
 function publish(sourceFolder, index) {
   const progress = `[${index+1}/${projects.length}]`;
+
   const projectName = path.basename(sourceFolder);
+
+  const projectChapterId = Number(projectName.match(/^rq(\d+)/)[1]);
+  const folderChapterId = Number(sourceFolder.match(/ch(\d+)/)[1]);
+  if (projectChapterId !== folderChapterId) {
+    // This one should be unpublished because chapter number has changed
+    try {
+      cp.execSync(`npm unpublish cra-template-${projectName} -f`);
+      console.log(`Successfully unpublished "${projectName}" ${progress}`);
+    } catch(e) {
+      console.error(`Skipped unpublishing "${projectName}" ${progress}`);
+    }
+  }
+
   const projectFolder = path.join(projectsFolder, projectName);
   const templateFolder = path.join(projectFolder, 'template');
   fs.mkdirSync(projectFolder, 0744);

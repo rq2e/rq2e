@@ -1,11 +1,12 @@
 import './style.css';
-import TaskList from './TaskList';
+
+import TimerManager from './TimerManager';
 
 function App() {
   return (
-    <main>
-      <h1>Task Manager</h1>
-      <TaskList />
+    <main className="wrapper">
+      <h1 className="title">Countdown</h1>
+      <TimerManager />
     </main>
   );
 }
