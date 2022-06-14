@@ -31,13 +31,17 @@ function generatePackage(packageJson) {
 
 function generateTemplate(packageJson) {
   const { scripts, dependencies } = JSON.parse(packageJson);
-  return JSON.stringify({ scripts, dependencies }, null, 2);
+  delete dependencies['react'];
+  delete dependencies['react-dom'];
+  delete dependencies['react-scripts'];
+  return JSON.stringify({ package: { scripts, dependencies } }, null, 2);
 }
 
 const filesToCopy = [
   { source: '/public', destination: ['/public', '/template/public'] },
   { source: '/src', destination: ['/src', '/template/src'] },
   { source: '/README.md', destination: ['/README.md'] },
+  { source: '/config*', destination: ['/template/<basename>'] },
   { source: '/yarn.lock', destination: ['/yarn.lock'] },
   { source: '/package-lock.json', destination: ['/package-lock.json'] },
   { source: '/.gitignore', destination: ['/.gitignore', '/template/gitignore'] }, // Not a typo - no dot required
