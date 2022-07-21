@@ -1,0 +1,41 @@
+.highscore-entry {
+  background: white;
+  display: flex;
+  border: 1px solid black;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.highscore-entry:nth-child(2n) {
+  background: #f7f7f7;
+}
+
+.highscore-entry + .highscore-entry {
+  border-top: 0;
+}
+
+.highscore-entry__pos,
+.highscore-entry__points,
+.highscore-entry__name {
+  padding: 0.5em 1em;
+  margin: 0;
+}
+.highscore-entry__pos,
+.highscore-entry__name {
+  border-right: 1px solid black;
+}
+.highscore-entry__pos,
+.highscore-entry__points {
+  font-variant-numeric: ordinal;
+  text-align: right;
+}
+.highscore-entry__pos {
+  flex-basis: 15%;
+}
+.highscore-entry__name {
+  flex-basis: 60%;
+}
+.highscore-entry__points {
+  flex-basis: 35%;
+}

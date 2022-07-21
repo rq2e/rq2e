@@ -1,0 +1,22 @@
+.pagination {
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  margin: 1em 0;
+  padding: 0;
+  gap: 1em;
+}
+.pagination__item {
+  text-decoration: underline;
+}
+.pagination__link {
+  border: 0;
+  background: transparent;
+  color: blue;
+  text-decoration: inherit;
+  font: inherit;
+  padding: 0;
+  cursor: pointer;
+}
