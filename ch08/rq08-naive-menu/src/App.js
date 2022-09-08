@@ -4,7 +4,7 @@ function Menu() {
   const [isExpanded, setExpanded] = useState(false);    
   useEffect(() => {
     if (!isExpanded) {    
-      return false;
+      return;
     }
     const onWindowClick = () => setExpanded(false);
     window.addEventListener('click', onWindowClick);
