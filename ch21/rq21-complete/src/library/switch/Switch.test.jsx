@@ -7,7 +7,7 @@ import * as stories from "./Switch.stories";
 
 const { Default, Prechecked } = composeStories(stories);
 
-describe("Button", () => {
+describe("Switch", () => {
   test("should be clickable", async () => {
     // ARRANGE
     const mockOnChange = jest.fn();
@@ -33,7 +33,7 @@ describe("Button", () => {
     expect(mockOnChange).toHaveBeenCalledTimes(2);
   });
 
-  test("should render correctly if pre-checked and be toggled via keyboard", async () => {
+  test("should render correctly if pre-checked and be toggleable via keyboard", async () => {
     // ARRANGE
     render(<Prechecked />);
     const checkbox = screen.getByRole("checkbox", { name: "Pets allowed?" });

@@ -33,6 +33,13 @@ const Dismiss = styled.button`
   right: 3px;
   top: 3px;
   color: inherit;
+  cursor: pointer;
+  line-height: 1;
+
+  &:hover,
+  &:focus {
+    outline: 1px dotted;
+  }
 `;
 
 function Toast({

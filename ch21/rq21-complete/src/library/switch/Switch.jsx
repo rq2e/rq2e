@@ -33,6 +33,7 @@ const Checkbox = styled.input.attrs({ type: "checkbox" })`
     position: absolute;
     height: 1.5em;
     transition: all 0.25s ease;
+    cursor: pointer;
   }
 
   & + ${Label}::before {
@@ -73,17 +74,16 @@ const Checkbox = styled.input.attrs({ type: "checkbox" })`
     border-color: rgb(var(--color-primary));
   }
 
+  :disabled + ${Label}::before, :disabled + ${Label}::after {
+    cursor: default;
+  }
   :disabled + ${Label}::before {
-    background-color: transparent;
+    background-color: #ddd;
     border-color: #ddd;
   }
 
   :disabled + ${Label}::after {
     border-color: #ddd;
-  }
-
-  :disabled:hover + ${Label} {
-    color: #999;
   }
 
   :disabled:hover + ${Label}::before {
