@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Link extends Component {
   render() {
     return React.createElement(
-      'p',
+      "p",
       null,
       React.createElement(
-        'a',
-        {href: this.props.url},
-        `Read more about ${this.props.framework}`,
-      ),
+        "a",
+        { href: this.props.url },
+        `Read more about ${this.props.framework}`
+      )
     );
   }
 }
