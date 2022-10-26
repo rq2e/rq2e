@@ -1,8 +1,12 @@
-import React, { Component, Fragment } from 'react';
+import { Component, Fragment } from "react";
 
 class Link extends Component {
   render() {
-    return <p><a href="//reactjs.org">Read more about React</a></p>;
+    return (
+      <p>
+        <a href="//reactjs.org">Read more about React</a>
+      </p>
+    );
   }
 }
 

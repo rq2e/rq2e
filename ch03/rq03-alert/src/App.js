@@ -1,12 +1,12 @@
-import { Component } from 'react';
+import { Component } from "react";
 
 class Alert extends Component {
   render() {
     return (
       <p>
-        {this.props.isError && '⚠️'}
+        {this.props.isError && "⚠️"}
         {this.props.children}
-        {this.props.isError && '⚠️'}
+        {this.props.isError && "⚠️"}
       </p>
     );
   }

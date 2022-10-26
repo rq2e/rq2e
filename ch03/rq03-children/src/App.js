@@ -1,18 +1,23 @@
-import React from 'react';
+import { Fragment, Component } from "react";
 
-function App() {
-  return (
-    <div style={{ textAlign: 'center' }}>
-      <header>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class Link extends Component {
+  render() {
+    return <a href={this.props.url}>{this.props.children}</a>;
+  }
+}
+
+class App extends Component {
+  render() {
+    return (
+      <Fragment>
+        <Link url="//reactjs.org">
+          <strong>React</strong>
+        </Link>
+        <Link url="//vuejs.org">Vue</Link>
+        <Link url="//angular.io">Angular</Link>
+      </Fragment>
+    );
+  }
 }
 
 export default App;

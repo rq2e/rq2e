@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import { Component, Fragment } from "react";
 
 class UserButtons extends Component {
   render() {
@@ -10,7 +10,7 @@ class UserButtons extends Component {
         <button disabled={disabled}>Checkout</button>
         {hasAddress && <button disabled={disabled}>One-click buy</button>}
       </Fragment>
-    ) : (               
+    ) : (
       <button>Add credit card</button>
     );
   }
@@ -21,9 +21,7 @@ class GuestButtons extends Component {
     return (
       <Fragment>
         <button>Login</button>
-        <button disabled={!this.props.canCheckout}>
-          Checkout as guest
-        </button>
+        <button disabled={!this.props.canCheckout}>Checkout as guest</button>
       </Fragment>
     );
   }
@@ -33,7 +31,7 @@ class ShoppingCart extends Component {
   render() {
     const hasItems = this.props.items.length > 0;
     const isLoggedIn = this.props.user !== null;
-    const isAvailable = this.props.items.every(item => !item.outOfStock);
+    const isAvailable = this.props.items.every((item) => !item.outOfStock);
     const canCheckout = hasItems && isAvailable;
     return isLoggedIn ? (
       <UserButtons user={this.props.user} canCheckout={canCheckout} />
@@ -43,12 +41,11 @@ class ShoppingCart extends Component {
   }
 }
 
-
 class App extends Component {
   render() {
-    const items = [1,2,3];
+    const items = [1, 2, 3];
     const user = { creditcard: null, address: true };
-    return <ShoppingCart items={items} user={user}  />
+    return <ShoppingCart items={items} user={user} />;
   }
 }
 
