@@ -22,7 +22,7 @@ function TodoApplication({ initialList }) {
             <>
               {todo.task}
               <button
-                onClick={() => setTodos((todos) => markDone(todos, todo.index))}
+                onClick={() => setTodos((value) => markDone(value, todo.index))}
               >
                 x
               </button>
