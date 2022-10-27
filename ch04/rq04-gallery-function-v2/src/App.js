@@ -9,7 +9,7 @@ function App() {
 
 function Gallery() {
   return (
-    <section style={{display: 'flex'}}>
+    <section style={{ display: "flex" }}>
       <Image index="1003" title="Deer" />
       <Image index="1020" title="Bear" />
       <Image index="1024" title="Vulture" />
@@ -19,12 +19,12 @@ function Gallery() {
 }
 
 function getImageSource(index) {
-   return `//picsum.photos/id/${index}/150/150/`;
+  return `//picsum.photos/id/${index}/150/150/`;
 }
 
 function Image({ index, title }) {
   return (
-    <figure style={{margin: '5px'}}>
+    <figure style={{ margin: "5px" }}>
       <img src={getImageSource(index)} alt={title} />
       <figcaption>
         <h3>Species: {title}</h3>

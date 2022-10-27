@@ -1,10 +1,10 @@
-import { Component } from 'react';
+import { Component } from "react";
+import "./App.css";
 
 class App extends Component {
   render() {
     return (
       <main>
-        <h1>Menu options:</h1>
         <Menu />
       </main>
     );
@@ -14,11 +14,14 @@ class App extends Component {
 class Menu extends Component {
   render() {
     return (
-      <ul>
-        <MenuItem label="Home" href="/" />
-        <MenuItem label="About" href="/about/" />
-        <MenuItem label="Blog" href="/blog" />
-      </ul>
+      <nav className="navbar">
+        <h1 className="title">TheMenuCompany</h1>
+        <ul className="menu">
+          <MenuItem label="Home" href="/" />
+          <MenuItem label="About" href="/about/" />
+          <MenuItem label="Blog" href="/blog" />
+        </ul>
+      </nav>
     );
   }
 }
@@ -26,8 +29,8 @@ class Menu extends Component {
 class MenuItem extends Component {
   render() {
     return (
-      <li>
-        <a href={this.props.href} title={this.props.label}>
+      <li className="menu-item">
+        <a className="menu-link" href={this.props.href}>
           {this.props.label}
         </a>
       </li>

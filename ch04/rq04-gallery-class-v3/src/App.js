@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { Component } from "react";
 
 class App extends Component {
   render() {
@@ -14,7 +14,7 @@ class App extends Component {
 class Gallery extends Component {
   render() {
     return (
-      <section style={{display: 'flex'}}>
+      <section style={{ display: "flex" }}>
         <Image index="1003" title="Deer" />
         <Image index="1020" title="Bear" />
         <Image index="1024" title="Vulture" />
@@ -30,7 +30,7 @@ class Image extends Component {
   }
   render() {
     return (
-      <figure style={{margin: '5px'}}>
+      <figure style={{ margin: "5px" }}>
         <img src={this.getImageSource()} alt={this.props.title} />
         <figcaption>
           <h3>Species: {this.props.title}</h3>
