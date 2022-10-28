@@ -1,12 +1,9 @@
-import { useEffect} from 'react';
+import { useEffect } from "react";
 
 function BlogPost({ title, body }) {
-  useEffect(
-    () => {
-      document.title = title;
-    },
-    [title],
-  );
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
   return (
     <article>
       <h1>{title}</h1>

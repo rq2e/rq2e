@@ -1,11 +1,11 @@
 {
-  "name": "rq06-countdown",
-  "version": "0.2.1",
+  "name": "rq06-push-button2",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "^5.0.1",
+    "react-scripts": "5.0.1",
     "prettier": "^2.7.1"
   },
   "scripts": {
@@ -29,7 +29,7 @@
       "last 1 safari version"
     ]
   },
-  "description": "This is example rq06-countdown from the book React Quickly, 2nd Ed.",
+  "description": "This is example rq06-push-button2 from the book React Quickly, 2nd Ed.",
   "homepage": "https://reactquickly.dev",
   "author": {
     "name": "Morten Barklund",
@@ -39,6 +39,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/rq2e/rq2e.git",
-    "directory": "ch06/rq06-countdown"
+    "directory": "ch06/rq06-push-button2"
   }
 }
