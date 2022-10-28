@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 function MouseStatus() {
   const [isMoving, setMoving] = useState(false);
@@ -11,7 +11,7 @@ function MouseStatus() {
   return (
     <section onMouseMove={onMouseMove}>
       <h2>
-        The mouse is {!isMoving && 'not'} moving: {isMoving ? '✓' : '✗'}
+        The mouse is {!isMoving && "not"} moving: {isMoving ? "✓" : "✗"}
       </h2>
     </section>
   );

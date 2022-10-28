@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 function Admin() {
-  const [password, setPassword] = useState('');
+  const [password, setPassword] = useState("");
   const [isAdmin, setAdmin] = useState(false);
   const onSubmit = (evt) => {
     evt.preventDefault();
-    if (password === 'platypus') {
+    if (password === "platypus") {
       setAdmin(true);
     }
   };
@@ -13,7 +13,10 @@ function Admin() {
     <h1>Bacon is delicious!</h1>
   ) : (
     <form onSubmit={onSubmit}>
-      <input type="password" onChange={evt => setPassword(evt.target.value)} />
+      <input
+        type="password"
+        onChange={(evt) => setPassword(evt.target.value)}
+      />
       <button>Login</button>
     </form>
   );

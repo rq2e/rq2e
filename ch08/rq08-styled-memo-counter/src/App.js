@@ -1,13 +1,13 @@
-import { memo, useState, useCallback } from 'react';
+import { memo, useState, useCallback } from "react";
 
-const Button = memo(function Button({handleClick, label}) {
+const Button = memo(function Button({ handleClick, label }) {
   const buttonStyle = {
-    color: 'blue',
-    border: '1px solid',
-    background: 'transparent',
-    borderRadius: '.25em',
-    padding: '.5em 1em',
-    margin: '.5em',
+    color: "blue",
+    border: "1px solid",
+    background: "transparent",
+    borderRadius: ".25em",
+    padding: ".5em 1em",
+    margin: ".5em",
   };
   return (
     <button style={buttonStyle} onClick={handleClick}>
@@ -18,7 +18,7 @@ const Button = memo(function Button({handleClick, label}) {
 
 function StyledCounter() {
   const [counter, setCounter] = useState(0);
-  const update = useCallback((d) => setCounter(v => v + d), [setCounter]);
+  const update = useCallback((d) => setCounter((v) => v + d), [setCounter]);
   const handleIncrement = useCallback(() => update(1), [update]);
   const handleDecrement = useCallback(() => update(-1), [update]);
   return (

@@ -1,20 +1,22 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 function Menu() {
-  const [isExpanded, setExpanded] = useState(false);    
+  const [isExpanded, setExpanded] = useState(false);
   useEffect(() => {
-    if (!isExpanded) {    
+    if (!isExpanded) {
       return;
     }
     const onWindowClick = () => setExpanded(false);
-    window.addEventListener('click', onWindowClick);
-    return () => window.removeEventListener('click', onWindowClick);
-  }, [isExpanded]);   
+    window.addEventListener("pointerdown", onWindowClick);
+    return () => window.removeEventListener("pointerdown", onWindowClick);
+  }, [isExpanded]);
   return (
     <main>
-      <button onClick={() => setExpanded(true)}>Show menu</button>
+      <button onClick={() => setTimeout(() => setExpanded(true))}>
+        Show menu
+      </button>
       {isExpanded && (
-        <aside style={{border: '1px solid black', padding: '1em'}}>
+        <aside style={{ border: "1px solid black", padding: "1em" }}>
           This is the menu
         </aside>
       )}

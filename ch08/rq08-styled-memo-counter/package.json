@@ -1,11 +1,12 @@
 {
   "name": "rq08-styled-memo-counter",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "private": true,
   "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "5.0.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1",
+    "prettier": "^2.7.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -27,5 +28,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "description": "This is example rq08-styled-memo-counter from the book React Quickly, 2nd Ed.",
+  "homepage": "https://reactquickly.dev",
+  "author": {
+    "name": "Morten Barklund",
+    "email": "morten.barklund@gmail.com",
+    "url": "https://mortenbarklund.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rq2e/rq2e.git",
+    "directory": "ch08/rq08-styled-memo-counter"
   }
 }

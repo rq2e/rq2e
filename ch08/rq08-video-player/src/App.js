@@ -1,5 +1,6 @@
-import { useState, useRef } from 'react';
-const VIDEO_SRC = '//images-assets.nasa.gov/video/One Small Step/One Small Step~orig.mp4';
+import { useState, useRef } from "react";
+const VIDEO_SRC =
+  "//images-assets.nasa.gov/video/One Small Step/One Small Step~orig.mp4";
 function VideoPlayer() {
   const [isPlaying, setPlaying] = useState(false);
   const onPlay = () => setPlaying(true);
@@ -17,10 +18,8 @@ function VideoPlayer() {
         onPlay={onPlay}
         onPause={onPause}
       />
-      <button
-        onClick={isPlaying ? onClickPause : onClickPlay}
-      >
-        {isPlaying ? 'Pause' : 'Play'}
+      <button onClick={isPlaying ? onClickPause : onClickPlay}>
+        {isPlaying ? "Pause" : "Play"}
       </button>
     </section>
   );
