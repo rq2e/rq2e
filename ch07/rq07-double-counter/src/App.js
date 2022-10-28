@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef } from "react";
 
 const THRESHOLD = 300;
 function DoubleClickCounter({ from }) {
@@ -7,7 +7,7 @@ function DoubleClickCounter({ from }) {
   const onClick = () => {
     const isDoubleClick = Date.now() - lastClickTime.current < THRESHOLD;
     if (isDoubleClick) {
-      setCounter(value => value + 1);
+      setCounter((value) => value + 1);
     } else {
       lastClickTime.current = Date.now();
     }

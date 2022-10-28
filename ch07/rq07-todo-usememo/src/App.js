@@ -1,11 +1,11 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState } from "react";
 
 function Todo() {
-  const [items, setItems] = useState(['Clean gutter', 'Do dishes']);
-  const [newItem, setNewItem] = useState('');
+  const [items, setItems] = useState(["Clean gutter", "Do dishes"]);
+  const [newItem, setNewItem] = useState("");
   const onSubmit = (evt) => {
-    setItems(items => items.concat([newItem]));
-    setNewItem('');
+    setItems((items) => items.concat([newItem]));
+    setNewItem("");
     evt.preventDefault();
   };
   const itemsRendered = useMemo(
@@ -13,11 +13,13 @@ function Todo() {
       <>
         <h2>Todo items</h2>
         <ul>
-          {items.map(todo => <li key={todo}>{todo}</li>)}
+          {items.map((todo) => (
+            <li key={todo}>{todo}</li>
+          ))}
         </ul>
       </>
     ),
-    [items],
+    [items]
   );
   const onChange = (evt) => setNewItem(evt.target.value);
   return (
