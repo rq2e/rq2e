@@ -1,7 +1,7 @@
 {
-  "name": "rq09-natural-sum",
-  "version": "0.2.3",
-  "description": "This is example rq09-natural-sum from the book React Quickly, 2nd Ed.",
+  "name": "rq09-input-grid",
+  "version": "0.2.0",
+  "description": "This is example rq09-input-grid from the book React Quickly, 2nd Ed.",
   "author": {
     "name": "Morten Barklund",
     "email": "morten.barklund@gmail.com",
@@ -11,14 +11,14 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/rq2e/rq2e.git",
-    "directory": "ch09/rq09-natural-sum"
+    "directory": "ch09/rq09-input-grid"
   },
   "private": true,
   "dependencies": {
     "prettier": "^2.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

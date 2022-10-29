@@ -1,6 +1,6 @@
 function List({ items, handleDelete }) {
   if (!items.length) {
-    return <h2>To-do list empty, go out and play!</h2>
+    return <h2>To-do list empty, go out and play!</h2>;
   }
   return (
     <>
@@ -14,7 +14,7 @@ function List({ items, handleDelete }) {
             <th>Options</th>
           </tr>
         </thead>
-        {items.map(item => (
+        {items.map((item) => (
           <tr>
             <td>{item.title}</td>
             <td>{item.category}</td>

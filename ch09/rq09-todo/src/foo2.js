@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+const URL = "//salespower.invalid/api/address";
 function Address() {
   const [data, setData] = useState({
     address1: "",
@@ -14,8 +14,18 @@ function Address() {
     const value = evt.target.value;
     setData((oldData) => ({ ...oldData, [key]: value }));
   };
+  const onSubmit = (evt) => {
+    fetch(URL, {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
+    evt.preventDefault();
+  };
   return (
-    <form style={{ display: "flex", flexDirection: "column" }}>
+    <form
+      onSubmit={onSubmit}
+      style={{ display: "flex", flexDirection: "column" }}
+    >
       <label>
         Address line 1:
         <input value={data.address1} name="address1" onChange={onChange} />
@@ -40,13 +50,8 @@ function Address() {
         Country:
         <input value={data.country} name="country" onChange={onChange} />
       </label>
-      <pre>{JSON.stringify(data, true, 2)}</pre>
+      <button>Submit</button>
     </form>
   );
 }
-
-function App() {
-  return <Address />;
-}
-
-export default App;
+export default Address;

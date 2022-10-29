@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 function Sum() {
   const [first, setFirst] = useState(0);
@@ -6,7 +6,7 @@ function Sum() {
   const onChangeFirst = (evt) => setFirst(evt.target.valueAsNumber);
   const onChangeSecond = (evt) => setSecond(evt.target.valueAsNumber);
   return (
-    <form style={{display: 'flex', flexDirection: 'column'}}>
+    <form style={{ display: "flex", flexDirection: "column" }}>
       <label>
         A:
         <input type="number" value={first} onChange={onChangeFirst} />
