@@ -1,12 +1,24 @@
 {
   "name": "rq02-links-app-alt",
-  "version": "0.2.3",
+  "version": "0.2.5",
+  "description": "This is example rq02-links-app-alt from the book React Quickly, 2nd Ed.",
+  "author": {
+    "name": "Morten Barklund",
+    "email": "morten.barklund@gmail.com",
+    "url": "https://mortenbarklund.com/"
+  },
+  "homepage": "https://reactquickly.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rq2e/rq2e.git",
+    "directory": "ch02/rq02-links-app-alt"
+  },
   "private": true,
   "dependencies": {
+    "prettier": "^2.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "^5.0.1",
-    "prettier": "^2.7.1"
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -28,17 +40,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "description": "This is example rq02-links-app-alt from the book React Quickly, 2nd Ed.",
-  "homepage": "https://reactquickly.dev",
-  "author": {
-    "name": "Morten Barklund",
-    "email": "morten.barklund@gmail.com",
-    "url": "https://mortenbarklund.com/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/rq2e/rq2e.git",
-    "directory": "ch02/rq02-links-app-alt"
   }
 }
