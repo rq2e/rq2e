@@ -1,16 +1,16 @@
-import { useState, createContext, useContext } from 'react';
+import { useState, createContext, useContext } from "react";
 
 const BUTTON_STYLE = {
-  display: 'inline-block',
-  padding: '4px 10px',
-  background: 'transparent',
-  border: '0',
+  display: "inline-block",
+  padding: "4px 10px",
+  background: "transparent",
+  border: "0",
 };
 
 const HEADER_STYLE = {
-  display: 'flex',
-  justifyContent: 'flex-end',
-  borderBottom: '1px solid',
+  display: "flex",
+  justifyContent: "flex-end",
+  borderBottom: "1px solid",
 };
 
 const NameContext = createContext();
@@ -37,11 +37,19 @@ function Header() {
 
 function Welcome() {
   const name = useContext(NameContext);
-  return <section><h1>Welcome, {name}!</h1></section>;
+  return (
+    <section>
+      <h1>Welcome, {name}!</h1>
+    </section>
+  );
 }
 
 function Main() {
-  return <main><Welcome /></main>;
+  return (
+    <main>
+      <Welcome />
+    </main>
+  );
 }
 
 function Dashboard({ name }) {
@@ -54,7 +62,7 @@ function Dashboard({ name }) {
 }
 
 function AdminDashboard() {
-  const [user, setUser] = useState('Alice');
+  const [user, setUser] = useState("Alice");
   return (
     <>
       <select value={user} onChange={(evt) => setUser(evt.target.value)}>

@@ -1,4 +1,4 @@
-import { useContext, createContext } from 'react';
+import { useContext, createContext } from "react";
 
 const BorderContext = createContext(1);
 
@@ -6,9 +6,9 @@ function Button({ children }) {
   const borderWidth = useContext(BorderContext);
   const style = {
     border: `${borderWidth}px solid black`,
-    background: 'transparent',
+    background: "transparent",
   };
-  return <button style={style}>{children}</button>
+  return <button style={style}>{children}</button>;
 }
 
 function CartButton() {
@@ -16,42 +16,42 @@ function CartButton() {
     <BorderContext.Provider value={5}>
       <Button>Cart</Button>
     </BorderContext.Provider>
-  )
+  );
 }
 
 function Header() {
   const style = {
-    padding: '5px',
-    borderBottom: '1px solid black',
-    marginBottom: '10px',
-    display: 'flex',
-    gap: '5px',
-    justifyContent: 'flex-end',
-  }
+    padding: "5px",
+    borderBottom: "1px solid black",
+    marginBottom: "10px",
+    display: "flex",
+    gap: "5px",
+    justifyContent: "flex-end",
+  };
   return (
     <header style={style}>
       <Button>Clothes</Button>
       <Button>Toys</Button>
       <CartButton />
     </header>
-  )
+  );
 }
 
 function Footer() {
   const style = {
-    padding: '5px',
-    borderTop: '1px solid black',
-    marginTop: '10px',
-    display: 'flex',
-    justifyContent: 'space-between',
-  }
+    padding: "5px",
+    borderTop: "1px solid black",
+    marginTop: "10px",
+    display: "flex",
+    justifyContent: "space-between",
+  };
   return (
     <footer style={style}>
       <Button>About</Button>
       <Button>Jobs</Button>
       <CartButton />
     </footer>
-  )
+  );
 }
 
 function App() {

@@ -1,14 +1,14 @@
 const BUTTON_STYLE = {
-  display: 'inline-block',
-  padding: '4px 10px',
-  background: 'transparent',
-  border: '0',
+  display: "inline-block",
+  padding: "4px 10px",
+  background: "transparent",
+  border: "0",
 };
 
 const HEADER_STYLE = {
-  display: 'flex',
-  justifyContent: 'flex-end',
-  borderBottom: '1px solid',
+  display: "flex",
+  justifyContent: "flex-end",
+  borderBottom: "1px solid",
 };
 
 function Button({ children }) {
@@ -31,15 +31,28 @@ function Header({ name }) {
 }
 
 function Welcome({ name }) {
-  return <section><h1>Welcome, {name}!</h1></section>;
+  return (
+    <section>
+      <h1>Welcome, {name}!</h1>
+    </section>
+  );
 }
 
 function Main({ name }) {
-  return <main><Welcome name={name} /></main>;
+  return (
+    <main>
+      <Welcome name={name} />
+    </main>
+  );
 }
 
 function Dashboard({ name }) {
-  return <><Header name={name} /><Main name={name} /></>;
+  return (
+    <>
+      <Header name={name} />
+      <Main name={name} />
+    </>
+  );
 }
 
 function App() {

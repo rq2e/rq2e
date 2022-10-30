@@ -1,9 +1,12 @@
-import { useReducer } from 'react';
+import { useReducer } from "react";
 function reducer(state, { type }) {
   switch (type) {
-    case "INCREMENT": return state + 1;
-    case "DECREMENT": return state - 1;
-    default: return state;
+    case "INCREMENT":
+      return state + 1;
+    case "DECREMENT":
+      return state - 1;
+    default:
+      return state;
   }
 }
 function Counter() {
