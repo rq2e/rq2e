@@ -1,8 +1,8 @@
-import { memo, useCallback } from 'react';
+import { memo, useCallback } from "react";
 
-import Button from './Button';
-import TimeDisplay from './TimeDisplay';
-import useTimer from './useTimer';
+import Button from "./Button";
+import TimeDisplay from "./TimeDisplay";
+import useTimer from "./useTimer";
 
 function Timer({ startTime, id, onDelete }) {
   const {
@@ -13,22 +13,28 @@ function Timer({ startTime, id, onDelete }) {
   const handleDelete = useCallback(() => onDelete(id), [id, onDelete]);
 
   const timerClass = [
-    'timer',
-    isCompleted ? 'timer-ringing' : '',
-    isRunning ? 'timer-ticking' : '',
-  ].join(' ');
+    "timer",
+    isCompleted ? "timer-ringing" : "",
+    isRunning ? "timer-ticking" : "",
+  ].join(" ");
 
   return (
     <section className={timerClass}>
       <TimeDisplay time={remaining} />
-      {isRunning
-        ? <Button icon="pause" label="Pause" onClick={actions.pause} />
-        : <Button icon="play" label="Play" onClick={actions.play} disabled={isCompleted} />
-      }
+      {isRunning ? (
+        <Button icon="pause" label="Pause" onClick={actions.pause} />
+      ) : (
+        <Button
+          icon="play"
+          label="Play"
+          onClick={actions.play}
+          disabled={isCompleted}
+        />
+      )}
       <Button icon="restart" label="Restart" onClick={actions.restart} />
       <Button icon="trash" label="Delete" onClick={handleDelete} />
     </section>
   );
-};
+}
 
 export default memo(Timer);

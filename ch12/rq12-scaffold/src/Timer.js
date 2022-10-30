@@ -17,6 +17,6 @@ function Timer() {
       </button>
     </section>
   );
-};
+}
 
 export default Timer;

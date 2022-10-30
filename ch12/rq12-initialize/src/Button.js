@@ -4,6 +4,6 @@ function Button({ icon, label, ...rest }) {
       <img src={`/icons/${icon}.svg`} alt={label} />
     </button>
   );
-};
+}
 
 export default Button;

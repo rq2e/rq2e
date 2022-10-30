@@ -1,4 +1,4 @@
-import { useState, useContext, createContext } from 'react';
+import { useState, useContext, createContext } from "react";
 
 const DataContext = createContext({
   links: [],
@@ -20,12 +20,8 @@ export function DataProvider({ children }) {
   const links = [HOME, SERVICES, PRICING, BLOG].concat(
     isLoggedIn ? [PROFILE] : []
   );
-  const value = {links, isLoggedIn, login, logout};
-  return (
-    <DataContext.Provider value={value}>
-      {children}
-    </DataContext.Provider>
-  );
+  const value = { links, isLoggedIn, login, logout };
+  return <DataContext.Provider value={value}>{children}</DataContext.Provider>;
 }
 
 export function useData() {

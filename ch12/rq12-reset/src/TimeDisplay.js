@@ -1,4 +1,4 @@
-import Number from './Number';
+import Number from "./Number";
 
 function TimeDisplay({ time }) {
   const minutes = Math.floor(time / 60);
@@ -11,6 +11,6 @@ function TimeDisplay({ time }) {
       <Number value={seconds} label="seconds" />
     </ul>
   );
-};
+}
 
 export default TimeDisplay;

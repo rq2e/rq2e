@@ -1,7 +1,6 @@
-import './style.css';
-import Menu from './Menu';
-import Context from './Context';
-
+import "./style.css";
+import Menu from "./Menu";
+import Context from "./Context";
 
 function App() {
   const links = [

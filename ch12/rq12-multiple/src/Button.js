@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo } from "react";
 
 function Button({ icon, label, ...rest }) {
   return (
@@ -6,6 +6,6 @@ function Button({ icon, label, ...rest }) {
       <img src={`/icons/${icon}.svg`} alt={label} />
     </button>
   );
-};
+}
 
 export default memo(Button);

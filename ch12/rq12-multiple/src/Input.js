@@ -9,7 +9,9 @@ function Input({ name, value, ...rest }) {
         id={name}
         {...rest}
       />
-      <label className="unit" htmlFor={name}>{name}</label>
+      <label className="unit" htmlFor={name}>
+        {name}
+      </label>
     </li>
   );
 }

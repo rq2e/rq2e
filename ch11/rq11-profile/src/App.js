@@ -1,7 +1,7 @@
-import './style.css';
-import Menu from './Menu';
-import Main from './Main';
-import { DataProvider } from './Context';
+import "./style.css";
+import Menu from "./Menu";
+import Main from "./Main";
+import { DataProvider } from "./Context";
 
 function App() {
   return (

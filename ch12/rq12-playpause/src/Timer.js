@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-import Button from './Button';
-import TimeDisplay from './TimeDisplay';
+import Button from "./Button";
+import TimeDisplay from "./TimeDisplay";
 
 function Timer({ startTime }) {
   const [remaining, setRemaining] = useState(startTime);
@@ -12,7 +12,7 @@ function Timer({ startTime }) {
       return;
     }
     function tick() {
-      setRemaining(oldValue => {
+      setRemaining((oldValue) => {
         const value = oldValue - 1;
         if (value <= 0) {
           setRunning(false);
@@ -29,14 +29,15 @@ function Timer({ startTime }) {
   const pause = () => setRunning(false);
 
   return (
-    <section className={`timer ${isRunning ? 'timer-ticking' : ''}`}>
+    <section className={`timer ${isRunning ? "timer-ticking" : ""}`}>
       <TimeDisplay time={remaining} />
-      {isRunning
-        ? <Button icon="pause" label="Pause" onClick={pause} />
-        : <Button icon="play" label="Play"onClick={play} />
-      }
+      {isRunning ? (
+        <Button icon="pause" label="Pause" onClick={pause} />
+      ) : (
+        <Button icon="play" label="Play" onClick={play} />
+      )}
     </section>
   );
-};
+}
 
 export default Timer;
