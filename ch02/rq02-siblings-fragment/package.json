@@ -1,18 +1,18 @@
 {
   "name": "rq02-siblings-fragment",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "This is example rq02-siblings-fragment from the book React Quickly, 2nd Ed.",
   "author": {
     "name": "Morten Barklund",
     "email": "morten.barklund@gmail.com",
     "url": "https://mortenbarklund.com/"
   },
-  "homepage": "https://reactquickly.dev",
   "repository": {
     "type": "git",
     "url": "https://github.com/rq2e/rq2e.git",
     "directory": "ch02/rq02-siblings-fragment"
   },
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "prettier": "^2.7.1",

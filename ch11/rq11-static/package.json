@@ -1,18 +1,18 @@
 {
   "name": "rq11-static",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "This is example rq11-static from the book React Quickly, 2nd Ed.",
   "author": {
     "name": "Morten Barklund",
     "email": "morten.barklund@gmail.com",
     "url": "https://mortenbarklund.com/"
   },
-  "homepage": "https://reactquickly.dev",
   "repository": {
     "type": "git",
     "url": "https://github.com/rq2e/rq2e.git",
     "directory": "ch11/rq11-static"
   },
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "prettier": "^2.7.1",

@@ -1,18 +1,18 @@
 {
   "name": "rq12-scaffold",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "This is example rq12-scaffold from the book React Quickly, 2nd Ed.",
   "author": {
     "name": "Morten Barklund",
     "email": "morten.barklund@gmail.com",
     "url": "https://mortenbarklund.com/"
   },
-  "homepage": "https://reactquickly.dev",
   "repository": {
     "type": "git",
     "url": "https://github.com/rq2e/rq2e.git",
     "directory": "ch12/rq12-scaffold"
   },
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "prettier": "^2.7.1",
