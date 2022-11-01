@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function Icon({ type }) {
-  return <img src={`/images/${type}.png`} width="16" alt="" />;
+  return <img src={`images/${type}.png`} width="16" alt="" />;
 }
 
 function Button({ label, Icon }) {

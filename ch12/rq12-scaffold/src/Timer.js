@@ -13,7 +13,7 @@ function Timer() {
         </li>
       </ul>
       <button title="Play" className="toggle">
-        <img src="/icons/play.svg" alt="Play" />
+        <img src="icons/play.svg" alt="Play" />
       </button>
     </section>
   );
