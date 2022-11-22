@@ -19,11 +19,15 @@
 }
 
 .normal:hover .icon {
-  animation: bounce .2s ease-in-out alternate infinite;
+  animation: bounce 0.2s ease-in-out alternate infinite;
 }
 @keyframes bounce {
-  from { left: 0; }
-  to { left: 10px; }
+  from {
+    left: 0;
+  }
+  to {
+    left: 10px;
+  }
 }
 
 .outline {

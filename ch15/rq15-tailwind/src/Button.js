@@ -25,10 +25,9 @@ function Button({
     outline ? "bg-opacity-0 border-pink-500 text-pink-500" : "",
     "disabled:opacity-50 disabled:pointer-events-none",
     className,
-  ]
-    .filter(Boolean);
+  ].filter(Boolean);
 
-  const style = width ? {width: `${width}px`} : null;
+  const style = width ? { width: `${width}px` } : null;
 
   return (
     <button disabled={disabled} className={classNames.join(" ")} style={style}>

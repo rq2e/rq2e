@@ -22,7 +22,9 @@ function App() {
       </fieldset>
       <fieldset>
         <legend>Custom button</legend>
-        <Button style={{backgroundColor: 'purple', borderColor: 'purple'}}>Send</Button>
+        <Button style={{ backgroundColor: "purple", borderColor: "purple" }}>
+          Send
+        </Button>
       </fieldset>
     </>
   );
