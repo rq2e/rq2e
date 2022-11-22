@@ -1,18 +1,20 @@
 import React from "react";
 
 function App() {
-const originalListOfCars = [
-  {
-    make: "Fiat",
-    model: "500",
-    isPickup: false,
-  },
-  {
-    make: "BMW",
-    model: "Individual M760i xDrive Model V12 Excellence THE NEXT 100 YEARS",
-    isPickup: false,
-  },
-];
+  const originalListOfCars = [
+    {
+      make: "Fiat",
+      model: "500",
+      isPickup: false,
+      cylinders: 4,
+    },
+    {
+      make: "BMW",
+      model: "Individual M760i xDrive Model V12 Excellence THE NEXT 100 YEARS",
+      isPickup: false,
+      cylinders: 6,
+    },
+  ];
   const someCars = originalListOfCars.filter(
     (car) =>
       car.make === "Fiat" &&
@@ -22,16 +24,9 @@ const originalListOfCars = [
   );
 
   return (
-    <div style={{ textAlign: "center" }}>
-      <header>
-        <p>
-          Edit <code>src/App.js</code> and save to reload {someCars.length}.
-        </p>
-        <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
+    <header>
+      <p>Matching {someCars.length} cars.</p>
+    </header>
   );
 }
 
