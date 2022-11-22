@@ -1,8 +1,9 @@
-import useTask from '../task/useTask';
+import useTask from "../task/useTask";
 
 function StepCheckbox({ taskId, index }) {
-  const stepData = useTask(({ state: { tasks } }) => 
-    tasks.find(task => task.id === taskId).steps[index],
+  const stepData = useTask(
+    ({ state: { tasks } }) =>
+      tasks.find((task) => task.id === taskId).steps[index]
   );
   const editStep = useTask(({ actions: { editStep } }) => editStep);
 

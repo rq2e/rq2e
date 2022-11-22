@@ -1,5 +1,5 @@
-import { useContextSelector as useContextSelectorOrig } from 'use-context-selector';
-import { shallowEqualObjects } from 'shallow-equal';
+import { useContextSelector as useContextSelectorOrig } from "use-context-selector";
+import { shallowEqualObjects } from "shallow-equal";
 import { useRef } from "react";
 
 function useContextSelector(context, selector, selectMultiple = false) {

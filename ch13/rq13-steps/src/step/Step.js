@@ -1,7 +1,7 @@
-import { memo } from 'react';
+import { memo } from "react";
 
-import StepControls from './StepControls';
-import StepCheckbox from './StepCheckbox';
+import StepControls from "./StepControls";
+import StepCheckbox from "./StepCheckbox";
 
 function Step({ taskId, index }) {
   return (

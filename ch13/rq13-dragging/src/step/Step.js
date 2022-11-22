@@ -1,25 +1,20 @@
-import { memo, Fragment } from 'react';
+import { memo, Fragment } from "react";
 
-import useStep from './useStep';
-import StepControls from './StepControls';
-import StepCheckbox from './StepCheckbox';
-import StepEdit from './StepEdit';
+import useStep from "./useStep";
+import StepControls from "./StepControls";
+import StepCheckbox from "./StepCheckbox";
+import StepEdit from "./StepEdit";
 
-import Button from '../Button';
+import Button from "../Button";
 
 function Step({ index }) {
-  const {
-    isDragging,
-    isEditing,
-    startDrag,
-  } = useStep(
-    ({ state: { dragging, editingStep }, actions: { startDrag } }) => 
-      ({
-        isDragging: dragging === index,
-        isEditing: editingStep === index,
-        startDrag,
-      }),
-    true,
+  const { isDragging, isEditing, startDrag } = useStep(
+    ({ state: { dragging, editingStep }, actions: { startDrag } }) => ({
+      isDragging: dragging === index,
+      isEditing: editingStep === index,
+      startDrag,
+    }),
+    true
   );
 
   const handleDragStart = (evt) => {
@@ -28,15 +23,11 @@ function Step({ index }) {
   };
 
   if (isDragging) {
-    return <li className="step step-dragged" /> 
+    return <li className="step step-dragged" />;
   }
 
   return (
-    <li
-      draggable={!isEditing}
-      className="step"
-      onDragStart={handleDragStart}
-    >
+    <li draggable={!isEditing} className="step" onDragStart={handleDragStart}>
       {isEditing ? (
         <StepEdit index={index} />
       ) : (

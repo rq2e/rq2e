@@ -1,11 +1,14 @@
-html, body {
-	margin: 0;
-	font-family: Helvetica, Arial, sans-serif;
+html,
+body {
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
   background: #eee;
 }
 
-*, *::before, *::after {
-	box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 main {
@@ -65,7 +68,7 @@ main {
 }
 
 .card-expand {
-  transform: rotate(-.25turn);
+  transform: rotate(-0.25turn);
 }
 
 .card-expanded {
@@ -209,7 +212,7 @@ main {
 }
 
 .step:hover .step-handle {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .step:hover .step-handle:hover {

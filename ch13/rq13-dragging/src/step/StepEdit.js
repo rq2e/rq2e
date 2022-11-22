@@ -1,12 +1,14 @@
-import useStep from './useStep';
-import Button from '../Button';
+import useStep from "./useStep";
+import Button from "../Button";
 
 function StepEdit({ index }) {
-  const { oldText, edit } = useStep(({
-    state: { steps }, actions: { edit }
-  }) => ({
-    oldText: steps[index].step, edit,
-  }), true);
+  const { oldText, edit } = useStep(
+    ({ state: { steps }, actions: { edit } }) => ({
+      oldText: steps[index].step,
+      edit,
+    }),
+    true
+  );
 
   const handleEditStep = (evt) => {
     evt.preventDefault();
@@ -15,7 +17,12 @@ function StepEdit({ index }) {
 
   return (
     <form className="step-form" onSubmit={handleEditStep}>
-      <input className="step-input" placeholder="Edit step" defaultValue={oldText} name="step" />
+      <input
+        className="step-input"
+        placeholder="Edit step"
+        defaultValue={oldText}
+        name="step"
+      />
       <Button className="step-button" icon="check" label="Edit step" />
     </form>
   );

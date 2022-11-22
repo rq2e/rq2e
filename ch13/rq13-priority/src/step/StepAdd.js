@@ -1,7 +1,7 @@
-import { memo } from 'react';
+import { memo } from "react";
 
-import Button from '../Button';
-import useStep from './useStep';
+import Button from "../Button";
+import useStep from "./useStep";
 
 function StepAdd() {
   const add = useStep(({ actions: { add } }) => add);

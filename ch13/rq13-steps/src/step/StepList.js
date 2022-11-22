@@ -1,10 +1,10 @@
-import useTask from '../task/useTask';
-import Step from './Step';
-import StepAdd from './StepAdd';
+import useTask from "../task/useTask";
+import Step from "./Step";
+import StepAdd from "./StepAdd";
 
 function StepList({ taskId }) {
-  const steps = useTask(
-    ({ state: { tasks } }) => tasks.find(task => task.id === taskId).steps.map(({ step }) => step)
+  const steps = useTask(({ state: { tasks } }) =>
+    tasks.find((task) => task.id === taskId).steps.map(({ step }) => step)
   );
 
   return (

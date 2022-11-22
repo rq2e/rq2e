@@ -1,10 +1,10 @@
-import { useState, memo, Fragment, useMemo } from 'react';
+import { useState, memo, Fragment, useMemo } from "react";
 
-import { StepList } from '../step';
-import useTask from './useTask';
-import TaskHeader from './TaskHeader';
-import TaskControls from './TaskControls';
-import TaskProgress from './TaskProgress';
+import { StepList } from "../step";
+import useTask from "./useTask";
+import TaskHeader from "./TaskHeader";
+import TaskControls from "./TaskControls";
+import TaskProgress from "./TaskProgress";
 
 function Task({ id }) {
   const isExpanded = useTask(({ state: { expandedId } }) => expandedId === id);
@@ -29,7 +29,7 @@ function Task({ id }) {
             id={id}
             isEditable={isEditable}
             setEditable={setEditable}
-            />
+          />
           <StepList taskId={id} />
         </>
       )}

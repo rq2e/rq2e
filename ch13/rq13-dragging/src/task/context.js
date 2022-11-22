@@ -1,4 +1,4 @@
-import { createContext } from 'use-context-selector';
+import { createContext } from "use-context-selector";
 
 const TaskContext = createContext({ state: {}, actions: {} });
 

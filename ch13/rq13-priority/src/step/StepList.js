@@ -1,10 +1,10 @@
-import useStep from './useStep';
-import Step from './Step';
-import StepAdd from './StepAdd';
+import useStep from "./useStep";
+import Step from "./Step";
+import StepAdd from "./StepAdd";
 
 function StepList() {
-  const steps = useStep(
-    ({ state: { steps } }) => steps.map(({ step }) => step),
+  const steps = useStep(({ state: { steps } }) =>
+    steps.map(({ step }) => step)
   );
 
   return (

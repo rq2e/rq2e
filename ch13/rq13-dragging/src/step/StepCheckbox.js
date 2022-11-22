@@ -1,13 +1,13 @@
-import useStep from './useStep';
+import useStep from "./useStep";
 
 function StepCheckbox({ index }) {
-  const { step, completed, check } = useStep(({
-    state: { steps },
-    actions: { check },
-  }) => ({
-    ...steps[index],
-    check,
-  }), true);
+  const { step, completed, check } = useStep(
+    ({ state: { steps }, actions: { check } }) => ({
+      ...steps[index],
+      check,
+    }),
+    true
+  );
 
   return (
     <label className="step-label">

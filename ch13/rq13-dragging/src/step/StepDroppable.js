@@ -1,16 +1,16 @@
-import useStep from './useStep';
+import useStep from "./useStep";
 
 function StepDroppable({ id, position }) {
   const moveTo = useStep(({ actions: { moveTo } }) => moveTo);
 
   const handleDragLeave = (evt) => {
     evt.preventDefault();
-    evt.target.classList.remove('step-droppable-hover')
+    evt.target.classList.remove("step-droppable-hover");
   };
 
   const handleDragEnter = (evt) => {
     evt.preventDefault();
-    evt.target.classList.add('step-droppable-hover');
+    evt.target.classList.add("step-droppable-hover");
   };
 
   const handleDragOver = (evt) => evt.preventDefault();
