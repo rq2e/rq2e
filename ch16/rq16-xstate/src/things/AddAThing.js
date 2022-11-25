@@ -30,24 +30,29 @@ const Input = styled.input`
 function AddAThing() {
   const addThing = useAddThing();
   const [isAdding, setIsAdding] = useState(false);
-  const [newThing, setNewThing] = useState('');
+  const [newThing, setNewThing] = useState("");
 
   if (!isAdding) {
-    return <Button onClick={() => setIsAdding(true)}>Add a thing</Button>
+    return <Button onClick={() => setIsAdding(true)}>Add a thing</Button>;
   }
 
   const onSubmit = (evt) => {
     evt.preventDefault();
     addThing(newThing);
-    setNewThing('');
+    setNewThing("");
     setIsAdding(false);
-  }
+  };
 
   return (
     <Form onSubmit={onSubmit}>
-      <Input value={newThing} onChange={evt => setNewThing(evt.target.value)} />
+      <Input
+        value={newThing}
+        onChange={(evt) => setNewThing(evt.target.value)}
+      />
       <Button>Add</Button>
-      <Button type="button" onClick={() => setIsAdding(false)}>Cancel</Button>
+      <Button type="button" onClick={() => setIsAdding(false)}>
+        Cancel
+      </Button>
     </Form>
   );
 }

@@ -13,16 +13,16 @@ const INITIAL_STATE = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {
 };
 
 const reducers = {
-  seeThing: produce((draft, {payload: newThing}) => {
+  seeThing: produce((draft, { payload: newThing }) => {
     draft.currentThing = newThing;
   }),
   seeAllThings: produce((draft) => {
     draft.currentThing = null;
   }),
-  addThing: produce((draft, {payload: name}) => {
+  addThing: produce((draft, { payload: name }) => {
     draft.things.push({ id: uuid(), name, done: [] });
   }),
-  removeThing: produce((draft, {payload: id}) => {
+  removeThing: produce((draft, { payload: id }) => {
     const index = draft.things.findIndex((thing) => thing.id === id);
     if (index !== -1) {
       draft.things.splice(index, 1);
@@ -31,11 +31,11 @@ const reducers = {
       }
     }
   }),
-  doThing: produce((draft, {payload: id}) => {
+  doThing: produce((draft, { payload: id }) => {
     const thing = draft.things.find((thing) => thing.id === id);
     thing.done.push(Date.now());
   }),
-  undoThing: produce((draft, {payload: {id, index}}) => {
+  undoThing: produce((draft, { payload: { id, index } }) => {
     const thing = draft.things.find((thing) => thing.id === id);
     thing.done.splice(index, 1);
   }),

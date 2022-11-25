@@ -1,8 +1,21 @@
 {
   "name": "rq18-menuitem-icon",
-  "version": "0.1.0",
+  "version": "0.2.4",
+  "description": "This is example rq18-menuitem-icon from the book React Quickly, 2nd Ed.",
+  "author": {
+    "name": "Morten Barklund",
+    "email": "morten.barklund@gmail.com",
+    "url": "https://mortenbarklund.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rq2e/rq2e.git",
+    "directory": "ch18/rq18-menuitem-icon"
+  },
+  "homepage": ".",
   "private": true,
   "dependencies": {
+    "prettier": "^2.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1"
