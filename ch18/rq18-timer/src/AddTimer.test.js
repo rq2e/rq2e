@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 
-import AddTimer from "./Addtimer";
+import AddTimer from "./AddTimer";
 
 function setup() {
   const onAdd = jest.fn();
