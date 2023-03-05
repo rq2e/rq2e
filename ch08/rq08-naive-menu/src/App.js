@@ -16,9 +16,9 @@ function Menu() {
         Show menu
       </button>
       {isExpanded && (
-        <aside style={{ border: "1px solid black", padding: "1em" }}>
+        <div style={{ border: "1px solid black", padding: "1em" }}>
           This is the menu
-        </aside>
+        </div>
       )}
     </main>
   );

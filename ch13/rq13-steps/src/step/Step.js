@@ -1,5 +1,3 @@
-import { memo } from "react";
-
 import StepControls from "./StepControls";
 import StepCheckbox from "./StepCheckbox";
 
@@ -12,4 +10,4 @@ function Step({ taskId, index }) {
   );
 }
 
-export default memo(Step);
+export default Step;

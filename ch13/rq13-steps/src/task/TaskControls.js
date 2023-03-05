@@ -1,7 +1,9 @@
 import useTask from "./useTask";
 
 function TaskControls({ id, isEditable, setEditable }) {
-  const deleteTask = useTask(({ actions: { deleteTask } }) => deleteTask);
+  const {
+    actions: { deleteTask },
+  } = useTask();
 
   return (
     <ul className="card-controls">

@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState } from "react";
 
 import useTask from "../task/useTask";
 
@@ -6,68 +6,42 @@ import StepContext from "./context";
 
 function StepProvider({ taskId, children }) {
   const {
-    steps,
-    editStep,
-    moveStepTo,
-    checkStep,
-    addStep,
-    deleteStep,
-    moveStepUp,
-    moveStepDown,
-  } = useTask(
-    ({ state: { tasks }, actions }) => ({
-      steps: tasks.find((task) => task.id === taskId).steps,
-      ...actions,
-    }),
-    true
-  );
+    state: { tasks },
+    actions: {
+      editStep,
+      checkStep,
+      addStep,
+      deleteStep,
+      moveStepTo,
+      moveStepUp,
+      moveStepDown,
+    },
+  } = useTask();
+  const steps = tasks.find((task) => task.id === taskId).steps;
 
   const [editingStep, setEditingStep] = useState(null);
   const [dragging, setDragging] = useState(null);
 
-  const startDrag = useCallback((index) => {
+  const startDrag = (index) => {
     setTimeout(() => {
       setDragging(index);
       setEditingStep(null);
     });
-  }, []);
+  };
 
-  const edit = useCallback(
-    (step, text) => {
-      editStep({ taskId, step, text });
-      setEditingStep(null);
-    },
-    [taskId, editStep]
-  );
-
-  const moveTo = useCallback(
-    (position) => {
-      moveStepTo({ taskId, step: dragging, position });
-      setDragging(null);
-    },
-    [taskId, dragging, moveStepTo]
-  );
-
-  const check = useCallback(
-    (step) => checkStep({ taskId, step }),
-    [taskId, checkStep]
-  );
-  const add = useCallback(
-    (step) => addStep({ taskId, step }),
-    [taskId, addStep]
-  );
-  const remove = useCallback(
-    (step) => deleteStep({ taskId, step }),
-    [taskId, deleteStep]
-  );
-  const moveUp = useCallback(
-    (step) => moveStepUp({ taskId, step }),
-    [taskId, moveStepUp]
-  );
-  const moveDown = useCallback(
-    (step) => moveStepDown({ taskId, step }),
-    [taskId, moveStepDown]
-  );
+  const edit = (step, text) => {
+    editStep({ taskId, step, text });
+    setEditingStep(null);
+  };
+  const check = (step) => checkStep({ taskId, step });
+  const add = (step) => addStep({ taskId, step });
+  const remove = (step) => deleteStep({ taskId, step });
+  const moveTo = (position) => {
+    moveStepTo({ taskId, step: dragging, position });
+    setDragging(null);
+  };
+  const moveUp = (step) => moveStepUp({ taskId, step });
+  const moveDown = (step) => moveStepDown({ taskId, step });
 
   const value = {
     state: {
@@ -76,16 +50,15 @@ function StepProvider({ taskId, children }) {
       dragging,
     },
     actions: {
-      setEditingStep,
-      setDragging,
       startDrag,
+      setEditingStep,
       check,
       add,
       edit,
       remove,
+      moveTo,
       moveUp,
       moveDown,
-      moveTo,
     },
   };
   return <StepContext.Provider value={value}>{children}</StepContext.Provider>;

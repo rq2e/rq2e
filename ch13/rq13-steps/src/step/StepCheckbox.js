@@ -1,11 +1,11 @@
 import useTask from "../task/useTask";
 
 function StepCheckbox({ taskId, index }) {
-  const stepData = useTask(
-    ({ state: { tasks } }) =>
-      tasks.find((task) => task.id === taskId).steps[index]
-  );
-  const editStep = useTask(({ actions: { editStep } }) => editStep);
+  const {
+    state: { tasks },
+    actions: { editStep },
+  } = useTask();
+  const stepData = tasks.find((task) => task.id === taskId).steps[index];
 
   const handleCheck = () =>
     editStep(taskId, index, { completed: !stepData.completed });

@@ -1,18 +1,14 @@
 import useTask from "./useTask";
 
 function TaskHeader({ id, isEditable, setEditable, titleId, cardId }) {
-  const { task, isExpanded, toggleExpand, editTask } = useTask(
-    ({
-      state: { tasks, expandedId },
-      actions: { toggleExpand, editTask },
-    }) => ({
-      task: tasks.find((task) => task.id === id),
-      isExpanded: expandedId === id,
-      toggleExpand,
-      editTask,
-    }),
-    true
-  );
+  const {
+    state: { tasks, expandedId },
+    actions: { toggleExpand, editTask },
+  } = useTask();
+  console.log("tasks?", tasks);
+
+  const task = tasks.find((task) => task.id === id);
+  const isExpanded = expandedId === id;
 
   const { title, steps } = task;
 

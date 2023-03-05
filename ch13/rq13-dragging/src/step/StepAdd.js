@@ -1,10 +1,10 @@
-import { memo } from "react";
-
 import Button from "../Button";
 import useStep from "./useStep";
 
 function StepAdd() {
-  const add = useStep(({ actions: { add } }) => add);
+  const {
+    actions: { add },
+  } = useStep();
 
   const handleAddStep = (evt) => {
     evt.preventDefault();
@@ -22,4 +22,4 @@ function StepAdd() {
   );
 }
 
-export default memo(StepAdd);
+export default StepAdd;

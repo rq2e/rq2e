@@ -1,53 +1,56 @@
-import { useMemo, useEffect } from "react";
-import useReduction from "use-reduction";
+import { useEffect, useReducer } from "react";
 
-const reducer = {
-  play: (state) => ({ ...state, isRunning: true }),
-  pause: (state) => ({ ...state, isRunning: false }),
-  restart: (state) => ({
-    ...state,
-    remaining: state.initialRemaining,
-    isCompleted: false,
-  }),
-  tick: (state) => {
-    const remaining = state.remaining - 1;
-    if (remaining > 0) {
+function reducer(state, { type, payload }) {
+  switch (type) {
+    case "PLAY":
+      return { ...state, isRunning: true };
+    case "PAUSE":
+      return { ...state, isRunning: false };
+    case "RESTART":
       return {
         ...state,
-        remaining,
+        remaining: state.initialRemaining,
+        isCompleted: false,
+      };
+    case "TICK": {
+      const remaining = state.remaining - 1;
+      if (remaining > 0) {
+        return {
+          ...state,
+          remaining,
+        };
+      }
+      return {
+        ...state,
+        remaining: 0,
+        isRunning: false,
+        isCompleted: true,
       };
     }
-    return {
-      ...state,
-      remaining: 0,
-      isRunning: false,
-      isCompleted: true,
-    };
-  },
-};
+    default:
+      return state;
+  }
+}
 
 function useTimer(initialRemaining) {
-  const initialState = useMemo(
-    () => ({
-      initialRemaining,
-      remaining: initialRemaining,
-      isRunning: false,
-      isCompleted: false,
-    }),
-    [initialRemaining]
-  );
-  const [state, actions] = useReduction(initialState, reducer);
+  const initialState = {
+    initialRemaining,
+    remaining: initialRemaining,
+    isRunning: false,
+    isCompleted: false,
+  };
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
     if (!state.isRunning) {
       return;
     }
 
-    const interval = setInterval(() => actions.tick(), 1000);
+    const interval = setInterval(() => dispatch({ type: "TICK" }), 1000);
     return () => clearInterval(interval);
-  }, [state.isRunning, actions]);
+  }, [state.isRunning, dispatch]);
 
-  return { state, actions };
+  return { state, dispatch };
 }
 
 export default useTimer;

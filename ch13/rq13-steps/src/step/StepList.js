@@ -3,9 +3,12 @@ import Step from "./Step";
 import StepAdd from "./StepAdd";
 
 function StepList({ taskId }) {
-  const steps = useTask(({ state: { tasks } }) =>
-    tasks.find((task) => task.id === taskId).steps.map(({ step }) => step)
-  );
+  const {
+    state: { tasks },
+  } = useTask();
+  const steps = tasks
+    .find((task) => task.id === taskId)
+    .steps.map(({ step }) => step);
 
   return (
     <section className="progress">

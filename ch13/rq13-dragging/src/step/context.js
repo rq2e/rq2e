@@ -1,4 +1,4 @@
-import { createContext } from "use-context-selector";
+import { createContext } from "react";
 
 const StepContext = createContext({ state: {}, actions: {} });
 

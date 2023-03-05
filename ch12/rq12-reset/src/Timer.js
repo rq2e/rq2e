@@ -5,7 +5,7 @@ import useTimer from "./useTimer";
 function Timer({ startTime, id, onDelete }) {
   const {
     state: { remaining, isRunning, isCompleted },
-    actions,
+    dispatch,
   } = useTimer(startTime);
 
   const timerClass = [
@@ -18,16 +18,24 @@ function Timer({ startTime, id, onDelete }) {
     <section className={timerClass}>
       <TimeDisplay time={remaining} />
       {isRunning ? (
-        <Button icon="pause" label="Pause" onClick={actions.pause} />
+        <Button
+          icon="pause"
+          label="Pause"
+          onClick={() => dispatch({ type: "PAUSE" })}
+        />
       ) : (
         <Button
           icon="play"
           label="Play"
-          onClick={actions.play}
+          onClick={() => dispatch({ type: "PLAY" })}
           disabled={isCompleted}
         />
       )}
-      <Button icon="restart" label="Restart" onClick={actions.restart} />
+      <Button
+        icon="restart"
+        label="Restart"
+        onClick={() => dispatch({ type: "RESTART" })}
+      />
       <Button icon="trash" label="Delete" onClick={() => onDelete(id)} />
     </section>
   );

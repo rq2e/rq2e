@@ -1,6 +1,6 @@
 {
   "name": "rq13-dragging",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "This is example rq13-dragging from the book React Quickly, 2nd Ed.",
   "author": {
     "name": "Morten Barklund",
@@ -15,14 +15,10 @@
   "homepage": ".",
   "private": true,
   "dependencies": {
-    "immer": "^9.0.12",
     "prettier": "^2.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "^5.0.1",
-    "shallow-equal": "^1.2.1",
-    "use-context-selector": "^1.3.9",
-    "use-reduction": "^2.1.1"
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,59 +1,153 @@
-import produce from "immer";
-import { useEffect, useMemo } from "react";
+import { useEffect, useReducer } from "react";
 
-import useReduction from "use-reduction";
 import initialState from "./fixture";
 
-const reducer = {
-  toggleExpand: produce((draft, { payload: taskId }) => {
-    draft.expandedId = draft.expandedId === taskId ? null : taskId;
-  }),
-  addTask: produce((draft, { payload: title }) => {
-    draft.tasks.push({ id: Math.random() * 1000000, title, steps: [] });
-  }),
-  editTask: produce((draft, { payload: { taskId, title } }) => {
-    const task = draft.tasks.find(({ id }) => id === taskId);
-    task.title = title;
-  }),
-  deleteTask: produce((draft, { payload: taskId }) => {
-    const index = draft.tasks.findIndex(({ id }) => id === taskId);
-    draft.tasks.splice(index, 1);
-  }),
-  checkStep: produce((draft, { payload: { taskId, step } }) => {
-    const task = draft.tasks.find(({ id }) => id === taskId);
-    task.steps[step].completed = !task.steps[step].completed;
-  }),
-  editStep: produce((draft, { payload: { taskId, step, text } }) => {
-    const task = draft.tasks.find(({ id }) => id === taskId);
-    task.steps[step].step = text;
-  }),
-  deleteStep: produce((draft, { payload: { taskId, step } }) => {
-    const task = draft.tasks.find(({ id }) => id === taskId);
-    task.steps.splice(step, 1);
-  }),
-  addStep: produce((draft, { payload: { taskId, step } }) => {
-    const task = draft.tasks.find(({ id }) => id === taskId);
-    task.steps.push({ step, completed: false });
-  }),
-  moveStepUp: produce((draft, { payload: { taskId, step } }) => {
-    if (step === 0) return;
-    const task = draft.tasks.find(({ id }) => id === taskId);
-    const temp = task.steps[step];
-    task.steps[step] = task.steps[step - 1];
-    task.steps[step - 1] = temp;
-  }),
-  moveStepDown: produce((draft, { payload: { taskId, step } }) => {
-    const task = draft.tasks.find(({ id }) => id === taskId);
-    if (step === task.steps.length - 1) return;
-    const temp = task.steps[step];
-    task.steps[step] = task.steps[step + 1];
-    task.steps[step + 1] = temp;
-  }),
-};
+function reducer(state, { type, payload }) {
+  switch (type) {
+    case "TOGGLE":
+      return {
+        ...state,
+        expandedId: state.expandedId === payload ? null : payload,
+      };
+    case "ADD_TASK":
+      return {
+        ...state,
+        tasks: state.tasks.concat([
+          { id: Math.random() * 1000000, title: payload, steps: [] },
+        ]),
+      };
+    case "EDIT_TASK":
+      return {
+        ...state,
+        tasks: state.tasks.map((task) => {
+          if (task.id !== payload.taskId) {
+            return task;
+          }
+          return { ...task, title: payload.title };
+        }),
+      };
+    case "DELETE_TASK":
+      return {
+        ...state,
+        tasks: state.tasks.filter((task) => task.id !== payload),
+      };
+    case "CHECK_STEP":
+      return {
+        ...state,
+        tasks: state.tasks.map((task) => {
+          if (task.id !== payload.taskId) {
+            return task;
+          }
+          return {
+            ...task,
+            steps: [
+              ...task.steps.slice(0, payload.step),
+              {
+                ...task.steps[payload.step],
+                completed: !task.steps[payload.step].completed,
+              },
+              ...task.steps.slice(payload.step + 1),
+            ],
+          };
+        }),
+      };
+    case "EDIT_STEP":
+      return {
+        ...state,
+        tasks: state.tasks.map((task) => {
+          if (task.id !== payload.taskId) {
+            return task;
+          }
+          return {
+            ...task,
+            steps: [
+              ...task.steps.slice(0, payload.step),
+              {
+                ...task.steps[payload.step],
+                step: payload.text,
+              },
+              ...task.steps.slice(payload.step + 1),
+            ],
+          };
+        }),
+      };
+    case "DELETE_STEP":
+      return {
+        ...state,
+        tasks: state.tasks.map((task) => {
+          if (task.id !== payload.taskId) {
+            return task;
+          }
+          return {
+            ...task,
+            steps: [
+              ...task.steps.slice(0, payload.step),
+              ...task.steps.slice(payload.step + 1),
+            ],
+          };
+        }),
+      };
+    case "ADD_STEP":
+      return {
+        ...state,
+        tasks: state.tasks.map((task) => {
+          if (task.id !== payload.taskId) {
+            return task;
+          }
+          return {
+            ...task,
+            steps: task.steps.concat([
+              { step: payload.step, completed: false },
+            ]),
+          };
+        }),
+      };
+    case "MOVE_UP":
+      return {
+        ...state,
+        tasks: state.tasks.map((task) => {
+          if (task.id !== payload.taskId || payload.step === 0) {
+            return task;
+          }
+          const newSteps = task.steps.concat();
+          const temp = newSteps[payload.step];
+          newSteps[payload.step] = newSteps[payload.step - 1];
+          newSteps[payload.step - 1] = temp;
+          return {
+            ...task,
+            steps: newSteps,
+          };
+        }),
+      };
+    case "MOVE_DOWN":
+      return {
+        ...state,
+        tasks: state.tasks.map((task) => {
+          if (
+            task.id !== payload.taskId ||
+            payload.step === task.steps.length - 1
+          ) {
+            return task;
+          }
+          const newSteps = task.steps.concat();
+          const temp = newSteps[payload.step];
+          newSteps[payload.step] = newSteps[payload.step + 1];
+          newSteps[payload.step + 1] = temp;
+          return {
+            ...task,
+            steps: newSteps,
+          };
+        }),
+      };
+    default:
+      return state;
+  }
+}
 
 function getInitialState() {
   const tasks =
-    JSON.parse(localStorage.getItem("task-manager-items")) || initialState;
+    JSON.parse(localStorage.getItem("task-manager-items-priority")) ||
+    initialState;
   return {
     expandedId: null,
     tasks,
@@ -61,16 +155,40 @@ function getInitialState() {
 }
 
 function useTaskReducer() {
-  const initialState = useMemo(getInitialState, []);
-  const [state, actions] = useReduction(initialState, reducer);
+  const [state, dispatch] = useReducer(reducer, null, getInitialState);
 
   useEffect(() => {
-    localStorage.setItem("task-manager-items", JSON.stringify(state.tasks));
+    localStorage.setItem(
+      "task-manager-items-priority",
+      JSON.stringify(state.tasks)
+    );
   }, [state.tasks]);
+
+  const toggleExpand = (payload) => dispatch({ type: "TOGGLE", payload });
+  const addTask = (payload) => dispatch({ type: "ADD_TASK", payload });
+  const editTask = (payload) => dispatch({ type: "EDIT_TASK", payload });
+  const deleteTask = (payload) => dispatch({ type: "DELETE_TASK", payload });
+  const checkStep = (payload) => dispatch({ type: "CHECK_STEP", payload });
+  const editStep = (payload) => dispatch({ type: "EDIT_STEP", payload });
+  const deleteStep = (payload) => dispatch({ type: "DELETE_STEP", payload });
+  const addStep = (payload) => dispatch({ type: "ADD_STEP", payload });
+  const moveStepUp = (payload) => dispatch({ type: "MOVE_UP", payload });
+  const moveStepDown = (payload) => dispatch({ type: "MOVE_DOWN", payload });
 
   return {
     state,
-    actions,
+    actions: {
+      toggleExpand,
+      addTask,
+      editTask,
+      deleteTask,
+      checkStep,
+      editStep,
+      deleteStep,
+      addStep,
+      moveStepUp,
+      moveStepDown,
+    },
   };
 }
 

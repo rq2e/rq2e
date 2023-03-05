@@ -2,13 +2,11 @@ import useStep from "./useStep";
 import Button from "../Button";
 
 function StepEdit({ index }) {
-  const { oldText, edit } = useStep(
-    ({ state: { steps }, actions: { edit } }) => ({
-      oldText: steps[index].step,
-      edit,
-    }),
-    true
-  );
+  const {
+    state: { steps },
+    actions: { edit },
+  } = useStep();
+  const oldText = steps[index].step;
 
   const handleEditStep = (evt) => {
     evt.preventDefault();

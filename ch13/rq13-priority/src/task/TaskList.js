@@ -3,10 +3,10 @@ import TaskAdd from "./TaskAdd";
 import useTask from "./useTask";
 
 function TaskList() {
-  const taskIds = useTask(
-    ({ state: { tasks } }) => tasks.map(({ id }) => id),
-    true
-  );
+  const {
+    state: { tasks },
+  } = useTask();
+  const taskIds = tasks.map(({ id }) => id);
 
   return (
     <ol className="lane">

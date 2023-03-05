@@ -21,12 +21,12 @@ function Menu() {
     <main>
       <button onClick={() => setExpanded(true)}>Show menu</button>
       {isExpanded && (
-        <aside
+        <div
           ref={menuRef}
           style={{ border: "1px solid black", padding: "1em" }}
         >
           This is the menu
-        </aside>
+        </div>
       )}
     </main>
   );

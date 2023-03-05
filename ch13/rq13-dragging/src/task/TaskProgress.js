@@ -1,9 +1,10 @@
 import useTask from "./useTask";
 
 function TaskProgress({ id }) {
-  const steps = useTask(
-    ({ state: { tasks } }) => tasks.find((task) => task.id === id).steps
-  );
+  const {
+    state: { tasks },
+  } = useTask();
+  const steps = tasks.find((task) => task.id === id).steps;
 
   const stepsTotal = steps.length;
   const stepsCompleted = steps.filter(({ completed }) => completed).length;

@@ -2,8 +2,10 @@ import useTask from "./useTask";
 
 import Button from "../Button";
 
-function Task({ id }) {
-  const addTask = useTask(({ actions: { addTask } }) => addTask);
+function TaskAdd() {
+  const {
+    actions: { addTask },
+  } = useTask();
 
   const handleAddTask = (evt) => {
     evt.preventDefault();
@@ -27,4 +29,4 @@ function Task({ id }) {
   );
 }
 
-export default Task;
+export default TaskAdd;

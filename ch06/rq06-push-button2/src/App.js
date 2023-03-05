@@ -4,11 +4,11 @@ function Icon({ type }) {
   return <img src={`images/${type}.png`} width="16" alt="" />;
 }
 
-function Button({ label, Icon }) {
+function Button({ label, ButtonIcon }) {
   const [pressed, setPressed] = useState(false);
   return (
     <button onClick={() => setPressed((p) => !p)}>
-      <Icon pressed={pressed} />
+      <ButtonIcon pressed={pressed} />
       {label}
     </button>
   );

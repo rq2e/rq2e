@@ -6,15 +6,9 @@ function StepButton(props) {
 }
 
 function StepControls({ index }) {
-  const { moveUp, moveDown, remove, setEditingStep } = useStep(
-    ({ actions: { moveUp, moveDown, remove, setEditingStep } }) => ({
-      moveUp,
-      moveDown,
-      remove,
-      setEditingStep,
-    }),
-    true
-  );
+  const {
+    actions: { moveUp, moveDown, remove, setEditingStep },
+  } = useStep();
 
   return (
     <>

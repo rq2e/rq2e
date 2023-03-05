@@ -8,14 +8,12 @@ import StepEdit from "./StepEdit";
 import Button from "../Button";
 
 function Step({ index }) {
-  const { isDragging, isEditing, startDrag } = useStep(
-    ({ state: { dragging, editingStep }, actions: { startDrag } }) => ({
-      isDragging: dragging === index,
-      isEditing: editingStep === index,
-      startDrag,
-    }),
-    true
-  );
+  const {
+    state: { editingStep, dragging },
+    actions: { startDrag },
+  } = useStep();
+  const isEditing = editingStep === index;
+  const isDragging = dragging === index;
 
   const handleDragStart = (evt) => {
     evt.dataTransfer.dropEffect = "move";

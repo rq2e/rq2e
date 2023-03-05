@@ -1,7 +1,9 @@
 import useStep from "./useStep";
 
 function StepDroppable({ id, position }) {
-  const moveTo = useStep(({ actions: { moveTo } }) => moveTo);
+  const {
+    actions: { moveTo },
+  } = useStep();
 
   const handleDragLeave = (evt) => {
     evt.preventDefault();

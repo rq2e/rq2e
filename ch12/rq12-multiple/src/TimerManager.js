@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState } from "react";
 
 import Timer from "./Timer";
 import AddTimer from "./AddTimer";
@@ -13,11 +13,8 @@ function TimerManager() {
     setAdding(false);
   };
 
-  const onDelete = useCallback(
-    (idToDelete) =>
-      setTimers((oldTimers) => oldTimers.filter(({ id }) => id !== idToDelete)),
-    []
-  );
+  const onDelete = (idToDelete) =>
+    setTimers((oldTimers) => oldTimers.filter(({ id }) => id !== idToDelete));
 
   return (
     <div className="timers">

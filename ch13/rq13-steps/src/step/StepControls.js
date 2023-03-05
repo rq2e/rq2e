@@ -6,7 +6,9 @@ function StepButton(props) {
 }
 
 function StepControls({ taskId, index }) {
-  const deleteStep = useTask(({ actions: { deleteStep } }) => deleteStep);
+  const {
+    actions: { deleteStep },
+  } = useTask();
 
   const onClick = () => deleteStep(taskId, index);
 

@@ -1,8 +1,8 @@
-import useContextSelector from "../useContextSelector";
+import { useContext } from "react";
 import TaskContext from "./context";
 
-function useTask(selector, selectMultiple) {
-  return useContextSelector(TaskContext, selector, selectMultiple);
+function useTask() {
+  return useContext(TaskContext);
 }
 
 export default useTask;

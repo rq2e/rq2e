@@ -1,8 +1,8 @@
-import useContextSelector from "../useContextSelector";
+import { useContext } from "react";
 import StepContext from "./context";
 
-function useStep(selector, selectMultiple) {
-  return useContextSelector(StepContext, selector, selectMultiple);
+function useStep() {
+  return useContext(StepContext);
 }
 
 export default useStep;

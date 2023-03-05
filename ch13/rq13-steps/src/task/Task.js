@@ -1,4 +1,4 @@
-import { useState, memo, Fragment, useMemo } from "react";
+import { useState, useMemo } from "react";
 
 import { StepList } from "../step";
 import useTask from "./useTask";
@@ -7,7 +7,10 @@ import TaskControls from "./TaskControls";
 import TaskProgress from "./TaskProgress";
 
 function Task({ id }) {
-  const isExpanded = useTask(({ state: { expandedId } }) => expandedId === id);
+  const {
+    state: { expandedId },
+  } = useTask();
+  const isExpanded = expandedId === id;
 
   const [isEditable, setEditable] = useState(false);
 
@@ -38,4 +41,4 @@ function Task({ id }) {
   );
 }
 
-export default memo(Task);
+export default Task;

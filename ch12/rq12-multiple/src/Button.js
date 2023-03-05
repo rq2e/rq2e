@@ -1,5 +1,3 @@
-import { memo } from "react";
-
 function Button({ icon, label, ...rest }) {
   return (
     <button title={label} className="toggle" {...rest}>
@@ -8,4 +6,4 @@ function Button({ icon, label, ...rest }) {
   );
 }
 
-export default memo(Button);
+export default Button;
