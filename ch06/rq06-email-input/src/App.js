@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function EmailInput({ value }) {
-  const [email, setEmail] = useState();
+  const [email, setEmail] = useState("");
   useEffect(() => setEmail(value), [value]);
   return (
     <label>

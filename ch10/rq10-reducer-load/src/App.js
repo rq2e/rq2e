@@ -1,6 +1,6 @@
 import { useReducer, useEffect } from "react";
 
-const URL = "https://swapi.dev/api/films";
+const URL = "//swapi.dev/api/films";
 const INITIAL_STATE = { status: "INITIALIZE", result: null, error: null };
 
 function reducer(state, { type, payload }) {
