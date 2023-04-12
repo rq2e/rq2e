@@ -7,7 +7,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
+        <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
           Learn React
         </a>
       </header>

@@ -4,7 +4,7 @@ class Link extends Component {
   render() {
     return (
       <p>
-        <a href="//reactjs.org">Read more about React</a>
+        <a href="//react.dev">Read more about React</a>
       </p>
     );
   }

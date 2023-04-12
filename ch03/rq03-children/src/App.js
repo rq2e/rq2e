@@ -10,7 +10,7 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        <Link url="//reactjs.org">
+        <Link url="//react.dev">
           <strong>React</strong>
         </Link>
         <Link url="//vuejs.org">Vue</Link>
