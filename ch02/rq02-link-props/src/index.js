@@ -14,7 +14,7 @@ class Link extends React.Component {
 
 const link1 = React.createElement(Link, {
   framework: "React",
-  url: "//reactjs.org",
+  url: "//react.dev",
 });
 const link2 = React.createElement(Link, {
   framework: "Vue",

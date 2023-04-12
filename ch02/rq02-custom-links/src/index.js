@@ -8,7 +8,7 @@ class Link extends React.Component {
       null,
       React.createElement(
         "a",
-        { href: "//reactjs.org" },
+        { href: "//react.dev" },
         "Read more about React"
       )
     );

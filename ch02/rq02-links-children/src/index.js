@@ -11,7 +11,7 @@ class Link extends React.Component {
   }
 }
 const boldReact = React.createElement("strong", null, "React");
-const link1 = React.createElement(Link, { url: "//reactjs.org" }, boldReact);
+const link1 = React.createElement(Link, { url: "//react.dev" }, boldReact);
 const link2 = React.createElement(Link, { url: "//vuejs.org" }, "Vue");
 const link3 = React.createElement(Link, { url: "//angular.io" }, "Angular");
 const group = React.createElement(React.Fragment, null, link1, link2, link3);
