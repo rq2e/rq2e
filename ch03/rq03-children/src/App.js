@@ -2,7 +2,11 @@ import { Fragment, Component } from "react";
 
 class Link extends Component {
   render() {
-    return <a href={this.props.url}>{this.props.children}</a>;
+    return (
+      <p>
+        <a href={this.props.url}>{this.props.children}</a>
+      </p>
+    );
   }
 }
 
