@@ -1,9 +1,7 @@
 import { useState } from "react";
-
 function markDone(list, index) {
   return list.map((item, i) => (i === index ? { ...item, done: true } : item));
 }
-
 function FilterButton({ current, flag, setFilter, children }) {
   const style = {
     border: "1px solid dimgray",
@@ -17,7 +15,6 @@ function FilterButton({ current, flag, setFilter, children }) {
     </button>
   );
 }
-
 function Task({ task, done, markDone }) {
   const paragraphStyle = {
     color: done ? "gray" : "black",
@@ -38,7 +35,6 @@ function Task({ task, done, markDone }) {
     </p>
   );
 }
-
 function TodoApplication({ initialList }) {
   const [todos, setTodos] = useState(initialList);
   const [hideDone, setHideDone] = useState(false);
@@ -58,20 +54,18 @@ function TodoApplication({ initialList }) {
           key={todo.task}
           task={todo.task}
           done={todo.done}
-          markDone={() => setTodos((value) => markDone(value, index))}
+          markDone={() => setTodos((value) => markDone(value, todo.index))}
         />
       ))}
     </main>
   );
 }
-
 function App() {
   const items = [
-    { task: "Feed the plants", done: false },
-    { task: "Water the dishes", done: false },
-    { task: "Clean the cat", done: false },
+    { task: "Feed the plants", done: false, index: 0 },
+    { task: "Water the dishes", done: false, index: 1 },
+    { task: "Clean the cat", done: false, index: 2 },
   ];
   return <TodoApplication initialList={items} />;
 }
-
 export default App;

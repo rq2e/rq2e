@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function DropdownCounter({ title, body }) {
+function DropdownCounter() {
   const [counter, setCounter] = useState(0);
   const onChange = (evt) =>
     setCounter((value) => value + parseInt(evt.target.value));
