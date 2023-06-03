@@ -28,7 +28,7 @@ function Timer({ startTime, onComplete }) {
   }, [isRunning, onComplete]);
 
   return (
-    <section className="timer">
+    <section className={`timer ${isRunning ? "timer-ticking" : ""}`}>
       <TimeDisplay time={remaining} />
       {isRunning ? (
         <Button icon="pause" label="Pause" onClick={() => setRunning(false)} />

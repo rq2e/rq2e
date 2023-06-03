@@ -20,7 +20,7 @@ function Row({ type, name = "input", children, ...rest }) {
       <td style={{ padding: "5px 0 5px 10px" }}>
         <pre>
           &lt;{name}
-          {type && ` type="${type}`} /&gt;
+          {type && ` type="${type}"`} /&gt;
         </pre>
       </td>
       <td style={{ padding: "5px 10px 5px 0" }}>{element}</td>
@@ -31,7 +31,7 @@ function InputGrid() {
   return (
     <div
       style={{
-        width: "calc(100vw - 2em)",
+        width: "calc(100vw - 1em)",
         display: "flex",
         gap: "1em",
         justifyContent: "stretch",

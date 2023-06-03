@@ -14,16 +14,18 @@ function List({ items, handleDelete }) {
             <th>Options</th>
           </tr>
         </thead>
-        {items.map((item) => (
-          <tr>
-            <td>{item.title}</td>
-            <td>{item.category}</td>
-            <td>{item.date}</td>
-            <td>
-              <button onClick={() => handleDelete(item)}>Delete</button>
-            </td>
-          </tr>
-        ))}
+        <tbody>
+          {items.map((item) => (
+            <tr key={JSON.stringify(item)}>
+              <td>{item.title}</td>
+              <td>{item.category}</td>
+              <td>{item.date}</td>
+              <td>
+                <button onClick={() => handleDelete(item)}>Delete</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
       </table>
     </>
   );
